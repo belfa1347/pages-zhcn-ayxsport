@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏体育 - 站点介绍页</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f2f4f6;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 0 1.2rem;
+        }
+        .container {
+            max-width: 1024px;
+            margin: 2rem auto;
+        }
+        /* hero 区 */
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 3rem 2.2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.04);
+            border: 1px solid #e9edf2;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+        }
+        .hero .sub {
+            font-size: 1.15rem;
+            color: #475569;
+            max-width: 600px;
+            margin: 0 auto 1.2rem;
+            font-weight: 380;
+        }
+        .hero .tagline {
+            display: inline-block;
+            background: #eef2f6;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #1e293b;
+            border: 1px solid #dce2e9;
+        }
+        /* 卡片通用 */
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 2rem 1.8rem;
+            border: 1px solid #e3e9ef;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02), 0 4px 10px rgba(0,0,0,0.02);
+            margin-bottom: 2rem;
+            transition: box-shadow 0.2s;
+        }
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+        }
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 480;
+            margin-bottom: 1.2rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #eef2f6;
+            letter-spacing: -0.01em;
+        }
+        .card p {
+            margin-bottom: 1.1rem;
+            color: #2c3e50;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem 2rem;
+            margin-top: 0.2rem;
+        }
+        .card li {
+            padding-left: 1.4rem;
+            position: relative;
+            font-size: 1rem;
+            color: #1e293b;
+        }
+        .card li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #4682b4;
+            font-weight: 600;
+        }
+        .inline-link {
+            color: #1e5691;
+            text-decoration: none;
+            border-bottom: 1px dotted #b8c9dd;
+            transition: border-color 0.15s, color 0.15s;
+        }
+        .inline-link:hover {
+            color: #0b3b6b;
+            border-bottom: 1px solid #0b3b6b;
+        }
+        /* 优势区三列 */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        .grid-item {
+            background: #fafbfc;
+            border-radius: 16px;
+            padding: 1.5rem 1.2rem;
+            border: 1px solid #e2e8ef;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+        }
+        .grid-item h3 {
+            font-size: 1.2rem;
+            font-weight: 480;
+            margin-bottom: 0.6rem;
+            color: #0f172a;
+        }
+        .grid-item p {
+            font-size: 0.93rem;
+            color: #334155;
+            margin-bottom: 0;
+        }
+        /* 说明区 与 FAQ 摘要 */
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 530;
+            margin-bottom: 0.2rem;
+            color: #0f172a;
+            font-size: 1.05rem;
+        }
+        .faq-item p {
+            margin-left: 0.6rem;
+            color: #3c4a5e;
+        }
+        /* 底部 */
+        .footer {
+            text-align: center;
+            padding: 1.8rem 0 1rem;
+            border-top: 1px solid #dde3ea;
+            margin-top: 1rem;
+            color: #5a6a7c;
+            font-size: 0.9rem;
+        }
+        .footer a {
+            color: #2c5282;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+        }
+        .footer a:hover {
+            border-bottom: 1px solid #2c5282;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #e2e8ef;
+            margin: 1.2rem 0;
+        }
+        @media (max-width: 720px) {
+            .hero h1 { font-size: 2rem; }
+            .grid-3 { grid-template-columns: 1fr; }
+            .card { padding: 1.8rem 1.2rem; }
+            .hero { padding: 2.2rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- hero 区 -->
+    <div class="hero">
+        <h1>关于爱游戏体育</h1>
+        <div class="sub">
+            一个以体育内容与信息分享为方向的站点，提供赛事动态、运动科普与社区互动空间。
+        </div>
+        <div class="tagline">温和 · 真实 · 开放</div>
+    </div>
+
+    <!-- 站点说明卡片（可信说明） -->
+    <div class="card">
+        <h2>站点定位与可信说明</h2>
+        <p>
+            <strong>爱游戏体育</strong> 是一个面向体育爱好者的信息聚合与交流平台，内容涵盖足球、篮球、网球、电子竞技等多项运动。网站由独立团队运营，力求呈现及时、多元的体育资讯，并鼓励用户分享观点与赛事观察。
+        </p>
+        <p>
+            为确保信息可信度，本站对新闻类内容标注来源，社区内容由用户自行发布，不代表平台立场。运营团队定期审核违规内容，并持续优化信息呈现方式。
+        </p>
+        <p>
+            您可以随时通过网站上的联系方式给予反馈，帮助我们一起维护健康、真诚的讨论环境。更多详情请直接浏览 <a href="https://zhcn-ayxsport.com.cn" class="inline-link">爱游戏体育</a>。
+        </p>
+    </div>
+
+    <!-- 优势区（三个卡片网格） -->
+    <div class="card" style="padding-bottom: 2rem;">
+        <h2>为什么选择这个站点</h2>
+        <div class="grid-3">
+            <div class="grid-item">
+                <h3>内容广度</h3>
+                <p>涵盖传统体育与新兴项目，兼顾赛事数据、战术分析与运动文化，满足不同兴趣维度。</p>
+            </div>
+            <div class="grid-item">
+                <h3>社区氛围</h3>
+                <p>用户可以在话题区理性讨论，站内设有反馈机制，鼓励建设性交流，减少争吵与误导。</p>
+            </div>
+            <div class="grid-item">
+                <h3>界面与体验</h3>
+                <p>页面设计以清晰易读为目标，无过度广告干扰，信息层级明确，移动端浏览同样友好。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 说明区（使用场景 / 适用人群） -->
+    <div class="card">
+        <h2>适用场景与人群</h2>
+        <p>
+            无论您是资深球迷、偶尔关注赛事的轻度爱好者，还是寻找运动入门知识的初学者，<a href="https://zhcn-ayxsport.com.cn" class="inline-link">爱游戏体育</a> 都提供适合的板块。
+        </p>
+        <ul>
+            <li>赛前前瞻与赛后复盘</li>
+            <li>运动技巧、训练心得分享</li>
+            <li>体育文化、历史与人物故事</li>
+            <li>电竞赛事与游戏化体育内容</li>
+            <li>跨运动比较与数据可视化</li>
+        </ul>
+        <p style="margin-top: 0.8rem;">
+            平台内容持续更新，同时保留过往讨论与专题，便于用户回溯和查找信息。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 (非完整faq，只摘取2-3个常见疑问) -->
+    <div class="card">
+        <h2>常见疑问摘要</h2>
+        <div class="faq-item">
+            <strong>内容是否权威？</strong>
+            <p>站点内资讯类内容标注来源或作者，分析类文章代表个人观点。普通用户讨论区内容未经官方核实，建议结合多方信息判断。</p>
+        </div>
+        <div class="faq-item">
+            <strong>是否需要注册才能浏览？</strong>
+            <p>大部分内容（文章、数据、视频）可以免费浏览，仅参与评论或发帖需要注册账号。注册过程简单，且不会强制要求绑定其他平台。</p>
+        </div>
+        <div class="faq-item">
+            <strong>如何举报不实或违规信息？</strong>
+            <p>每篇内容下方及用户主页均有举报入口，运营团队会在1-3个工作日内处理并反馈。您也可以直接联系站内客服邮箱。</p>
+        </div>
+        <hr>
+        <p style="font-size: 0.95rem; color: #3f5468;">
+            更完整的 FAQ 请访问 <a href="https://zhcn-ayxsport.com.cn" class="inline-link">爱游戏体育</a> 的帮助中心页面。
+        </p>
+    </div>
+
+    <!-- 底部 含再次链接 -->
+    <div class="footer">
+        <p>
+            <a href="https://zhcn-ayxsport.com.cn">爱游戏体育</a> — 以真诚的态度分享体育的乐趣。页面仅作介绍，具体功能以实际站点为准。
+        </p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #6d7e93;">
+            © 2025 · 站点介绍页 · 非官方最终页
+        </p>
+    </div>
+
+</div>
+</body>
+</html>
