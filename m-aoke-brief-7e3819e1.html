@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澳客 · 再次遇见</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #f1f3f4;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1e2a3a;
+      line-height: 1.7;
+      padding: 2rem 1.2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    /* 顶部导航 */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0 1.8rem 0;
+      border-bottom: 1px solid #dce1e6;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    .nav-brand {
+      font-weight: 550;
+      font-size: 1.3rem;
+      letter-spacing: 0.3px;
+      color: #2b3b4f;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #3d5168;
+      font-size: 0.95rem;
+      padding: 0.15rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #7c8fa3;
+      color: #0f1a26;
+    }
+    /* 主视觉 */
+    .hero {
+      margin: 3.2rem 0 3rem 0;
+      max-width: 780px;
+    }
+    .hero h1 {
+      font-size: 2.3rem;
+      font-weight: 500;
+      letter-spacing: -0.3px;
+      line-height: 1.25;
+      color: #1b2636;
+    }
+    .hero .sub {
+      margin-top: 1.4rem;
+      font-size: 1.1rem;
+      color: #405670;
+      max-width: 600px;
+    }
+    .hero .sub a {
+      color: #1a364f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #bcc9d9;
+      font-weight: 500;
+    }
+    /* 卡片通用 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.6rem;
+      margin: 2.8rem 0;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03), 0 4px 12px rgba(0,0,0,0.02);
+      border: 1px solid #e6ebf0;
+      transition: box-shadow 0.2s, transform 0.1s;
+    }
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05), 0 8px 24px rgba(0,0,0,0.03);
+      transform: translateY(-2px);
+    }
+    .card h3 {
+      font-weight: 500;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: #1c2e40;
+      letter-spacing: 0.2px;
+    }
+    .card p {
+      color: #3c4f63;
+      font-size: 0.98rem;
+    }
+    .card .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: #e9edf2;
+      padding: 0.2rem 0.8rem;
+      border-radius: 20px;
+      color: #30475e;
+      margin-top: 0.6rem;
+    }
+    /* 常见说明区 */
+    .faq-section {
+      margin: 3.6rem 0 2.4rem 0;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem 2rem 1.8rem 2rem;
+      border: 1px solid #e1e7ed;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+    .faq-section h2 {
+      font-weight: 500;
+      font-size: 1.4rem;
+      margin-bottom: 1.6rem;
+      color: #1b2a39;
+    }
+    .faq-item {
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #eef2f6;
+    }
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+    .faq-q {
+      font-weight: 500;
+      color: #1d3347;
+      margin-bottom: 0.2rem;
+    }
+    .faq-a {
+      color: #4b5f74;
+      font-size: 0.95rem;
+    }
+    .faq-a a {
+      color: #1f3d57;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #bccad9;
+    }
+    /* 底部 */
+    .footer-note {
+      margin-top: 3rem;
+      padding-top: 1.6rem;
+      border-top: 1px solid #dce2e9;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: #5c6f82;
+    }
+    .footer-note a {
+      color: #2e435b;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-color: #c6d2df;
+    }
+    .footer-note a:hover {
+      color: #0f1e2e;
+    }
+    /* 响应式微调 */
+    @media (max-width: 600px) {
+      body { padding: 1.5rem 1rem; }
+      .hero h1 { font-size: 1.7rem; }
+      .top-nav { flex-direction: column; align-items: flex-start; }
+      .nav-links { gap: 1.2rem; margin-top: 0.3rem; }
+      .faq-section { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <nav class="top-nav">
+    <span class="nav-brand">澳客·笔记</span>
+    <div class="nav-links">
+      <a href="#">再次回来</a>
+      <a href="#">收藏夹</a>
+      <a href="#">随记</a>
+      <a href="#">短笺</a>
+    </div>
+  </nav>
+
+  <!-- 主介绍 -->
+  <div class="hero">
+    <h1>有些角落，值得反复抵达</h1>
+    <div class="sub">
+      不是每个网站都会让人想再回去。<a href="https://m-aoke.com">澳客</a> 是其中一个。它不喧哗，不催促，只是安静地提供一种阅读与浏览的节奏。如果你曾经打开过，大概会明白我在说什么。
+    </div>
+  </div>
+
+  <!-- 三个场景卡片 -->
+  <div class="card-grid">
+    <div class="card">
+      <h3>再次回来</h3>
+      <p>浏览器标签页里总有些地址，隔段时间就会点开。不需要理由，就是习惯了那种氛围。<a href="https://m-aoke.com">澳客</a> 的页面从来不急着让你做决定，你可以慢慢翻，或者只是停在那里。</p>
+      <span class="tag">回访</span>
+    </div>
+    <div class="card">
+      <h3>放进收藏夹</h3>
+      <p>收藏夹里的链接很多，但真正会再打开的很少。我把它放在「常读」文件夹里，偶尔更新，偶尔翻翻旧内容。收藏不是为了囤积，是为了以后还能轻易找到。</p>
+      <span class="tag">书签</span>
+    </div>
+    <div class="card">
+      <h3>持续关注</h3>
+      <p>有些站点会慢慢变化，像一本缓缓增补的笔记。你不需要每天盯着，但每隔一阵子过去，总有一些新的文字或布局在等你。这种无声的更新，比推送通知更舒服。</p>
+      <span class="tag">细水长流</span>
+    </div>
+  </div>
+
+  <!-- 常见说明 (FAQ 摘要) -->
+  <div class="faq-section">
+    <h2>一些你可能想问的</h2>
+    <div class="faq-item">
+      <div class="faq-q">· 我很久没去过了，现在内容和以前一样吗？</div>
+      <div class="faq-a">整体风格延续，但细节会随季节调整。直接去 <a href="https://m-aoke.com">澳客</a> 看一眼就知道了。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">· 每次都要手动输入网址吗？</div>
+      <div class="faq-a">设个书签就好。或者像我一样，在手机桌面放一个快捷方式，下次直接点开。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">· 适合推荐给朋友吗？</div>
+      <div class="faq-a">看对方是不是喜欢安静浏览的人。如果对方习惯慢慢看，那 <a href="https://m-aoke.com">澳客</a> 应该会合拍。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">· 有没有什么访问技巧？</div>
+      <div class="faq-a">不需要技巧。打开，滑动，停留。不需要登录，不需要注册，就像翻开一本旧杂志。</div>
+    </div>
+  </div>
+
+  <!-- 底部 -->
+  <footer class="footer-note">
+    <span>偶尔回来，不必匆忙</span>
+    <span><a href="https://m-aoke.com">澳客</a> · 2025</span>
+  </footer>
+</body>
+</html>
